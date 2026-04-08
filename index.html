@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteAI Solutions — AI Automation for Dental & Chiropractic Clinics</title>
+    <meta name="description" content="Stop losing patients to missed calls. EliteAI builds custom AI receptionists that handle intake, scheduling, and follow-ups 24/7. Go live in 7 days.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: #16161f;
+            --bg-card-hover: #1c1c28;
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b8;
+            --text-muted: #6b6b80;
+            --accent-1: #6366f1;
+            --accent-2: #8b5cf6;
+            --accent-3: #a78bfa;
+            --gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+            --gradient-subtle: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.12));
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --shadow-glow: 0 0 80px rgba(99,102,241,0.15);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ─────────────────────────────────────── */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            backdrop-filter: blur(20px) saturate(1.4);
+            -webkit-backdrop-filter: blur(20px) saturate(1.4);
+            background: rgba(10,10,15,0.8);
+            border-bottom: 1px solid var(--border);
+            transition: background 0.3s;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo {
+            font-weight: 800; font-size: 1.25rem;
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; letter-spacing: -0.02em;
+        }
+        .logo span { -webkit-text-fill-color: var(--text-primary); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta {
+            background: var(--gradient) !important; color: #fff !important;
+            padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 0.875rem;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .mobile-toggle span {
+            display: block; width: 22px; height: 2px; background: var(--text-primary);
+            margin: 5px 0; border-radius: 2px; transition: 0.3s;
+        }
+
+        /* ── SHARED ──────────────────────────────────── */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 120px 0; }
+        .section-label {
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em;
+            line-height: 1.15; margin-bottom: 20px;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; line-height: 1.7;
+        }
+
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--gradient); color: #fff;
+            padding: 16px 36px; border-radius: 12px;
+            font-weight: 700; font-size: 1rem; text-decoration: none; border: none; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 24px rgba(99,102,241,0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.4); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: transparent; color: var(--text-primary);
+            padding: 16px 36px; border-radius: 12px;
+            font-weight: 600; font-size: 1rem; text-decoration: none; border: 1px solid var(--border);
+            transition: border-color 0.2s, background 0.2s; cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.03); }
+
+        /* ── HERO ────────────────────────────────────── */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding-top: 72px;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -200px; right: -200px;
+            width: 700px; height: 700px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -100px; left: -100px;
+            width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 720px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 18px; border-radius: 100px;
+            background: var(--gradient-subtle); border: 1px solid rgba(99,102,241,0.2);
+            font-size: 0.8rem; font-weight: 600; color: var(--accent-3);
+            margin-bottom: 32px;
+            animation: fadeUp 0.6s ease both;
+        }
+        .hero-badge::before {
+            content: ''; width: 6px; height: 6px; border-radius: 50%; background: #22c55e;
+            box-shadow: 0 0 8px #22c55e;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 800;
+            letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 24px;
+            animation: fadeUp 0.6s ease 0.1s both;
+        }
+        .hero h1 .gradient-text {
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 40px;
+            max-width: 560px;
+            animation: fadeUp 0.6s ease 0.2s both;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeUp 0.6s ease 0.3s both; }
+        .hero-stat-row {
+            display: flex; gap: 48px; margin-top: 64px; animation: fadeUp 0.6s ease 0.4s both;
+        }
+        .hero-stat-num {
+            font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em;
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-stat-label { font-size: 0.825rem; color: var(--text-muted); margin-top: 4px; }
+
+        /* ── PAIN POINTS ─────────────────────────────── */
+        .pain { background: var(--bg-secondary); }
+        .pain-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px; margin-top: 56px;
+        }
+        .pain-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 36px 28px;
+            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+            position: relative; overflow: hidden;
+        }
+        .pain-card:hover {
+            transform: translateY(-4px); border-color: var(--border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+        .pain-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 20px;
+        }
+        .pain-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
+        .pain-card p { color: var(--text-secondary); font-size: 0.925rem; line-height: 1.65; }
+        .pain-stat {
+            margin-top: 16px; font-size: 0.8rem; font-weight: 600; color: #ef4444;
+            display: flex; align-items: center; gap: 6px;
+        }
+
+        /* ── HOW IT WORKS ────────────────────────────── */
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+        .step-card { text-align: center; padding: 40px 28px; position: relative; }
+        .step-number {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--gradient); display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 1.25rem; margin: 0 auto 24px;
+            box-shadow: 0 4px 24px rgba(99,102,241,0.25);
+        }
+        .step-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+        .step-card p { color: var(--text-secondary); font-size: 0.925rem; line-height: 1.65; }
+        .step-connector {
+            position: absolute; top: 68px; right: -16px;
+            width: 32px; height: 2px; background: var(--border);
+        }
+        .step-card:last-child .step-connector { display: none; }
+
+        /* ── DEMO ────────────────────────────────────── */
+        .demo { background: var(--bg-secondary); }
+        .demo-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 24px; padding: 64px; text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .demo-box::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 60%; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
+        }
+        .demo-box h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800;
+            letter-spacing: -0.03em; margin-bottom: 16px;
+        }
+        .demo-box p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .demo-features {
+            display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;
+        }
+        .demo-feature {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;
+        }
+        .demo-feature .check { color: #22c55e; font-weight: 700; }
+
+        /* ── PRICING ─────────────────────────────────── */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
+        .price-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 44px 36px;
+            position: relative; transition: transform 0.25s, border-color 0.25s;
+        }
+        .price-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
+        .price-card.featured {
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: var(--shadow-glow);
+        }
+        .price-card.featured::before {
+            content: 'Most Popular'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+            background: var(--gradient); padding: 6px 20px; border-radius: 0 0 10px 10px;
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
+        }
+        .price-tier { font-size: 0.85rem; font-weight: 600; color: var(--accent-3); margin-bottom: 8px; }
+        .price-amount { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; }
+        .price-amount span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+        .price-desc { color: var(--text-secondary); font-size: 0.9rem; margin: 12px 0 28px; }
+        .price-features { list-style: none; margin-bottom: 32px; }
+        .price-features li {
+            padding: 10px 0; font-size: 0.9rem; color: var(--text-secondary);
+            display: flex; align-items: center; gap: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .price-features li:last-child { border-bottom: none; }
+        .price-features .check { color: #22c55e; font-weight: 700; flex-shrink: 0; }
+
+        /* ── TESTIMONIALS ────────────────────────────── */
+        .testimonials { background: var(--bg-secondary); }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 56px; }
+        .test-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 36px 28px;
+        }
+        .test-stars { color: #facc15; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+        .test-quote { font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px; font-style: italic; }
+        .test-author { display: flex; align-items: center; gap: 14px; }
+        .test-avatar {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1rem; color: var(--accent-3);
+        }
+        .test-name { font-weight: 600; font-size: 0.925rem; }
+        .test-role { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* ── FORM ────────────────────────────────────── */
+        #contact { scroll-margin-top: 80px; }
+        .form-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px;
+            align-items: start;
+        }
+        .form-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .form-info p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+        .form-info-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 0; border-bottom: 1px solid var(--border);
+            font-size: 0.925rem; color: var(--text-secondary);
+        }
+        .form-info-icon { font-size: 1.25rem; }
+        .form-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 40px;
+        }
+        .form-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 24px; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block; font-size: 0.825rem; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 8px;
+        }
+        .form-group input, .form-group select {
+            width: 100%; padding: 14px 16px; border-radius: var(--radius-sm);
+            border: 1px solid var(--border); background: var(--bg-primary);
+            color: var(--text-primary); font-family: inherit; font-size: 0.925rem;
+            transition: border-color 0.2s;
+            appearance: none; -webkit-appearance: none;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none; border-color: var(--accent-1);
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+        }
+        .form-group input::placeholder { color: var(--text-muted); }
+        .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236b6b80' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+        .form-group select option { background: var(--bg-card); }
+        .form-submit { width: 100%; margin-top: 8px; }
+        .form-disclaimer { font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; text-align: center; }
+
+        /* ── FOOTER ───────────────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border); padding: 48px 0 32px;
+            background: var(--bg-primary);
+        }
+        .footer-inner {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
+        }
+        .footer-brand p { color: var(--text-muted); font-size: 0.825rem; margin-top: 6px; }
+        .footer-links { display: flex; gap: 28px; }
+        .footer-links a { color: var(--text-muted); font-size: 0.825rem; text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-secondary); }
+        .footer-copy { width: 100%; text-align: center; padding-top: 32px; border-top: 1px solid var(--border); margin-top: 24px; }
+        .footer-copy p { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* ── ANIMATIONS ──────────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── RESPONSIVE ──────────────────────────────── */
+        @media (max-width: 900px) {
+            .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+            .step-connector { display: none !important; }
+            .form-grid { grid-template-columns: 1fr; }
+            .hero-stat-row { gap: 32px; }
+            .demo-box { padding: 40px 24px; }
+            .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+        }
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: absolute; top: 72px; left: 0; right: 0;
+                background: var(--bg-primary); border-bottom: 1px solid var(--border);
+                padding: 24px; gap: 20px;
+            }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width: 100%; justify-content: center; }
+            .hero-stat-row { flex-direction: column; gap: 20px; }
+            .section { padding: 80px 0; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .test-grid { grid-template-columns: 1fr; }
+            .form-card { padding: 28px 20px; }
+            .demo-features { flex-direction: column; align-items: center; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <div class="logo">EliteAI<span> Solutions</span></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#pain">Problems</a>
+            <a href="#how">How It Works</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#testimonials">Results</a>
+            <a href="#contact" class="nav-cta">Book Free Demo</a>
+        </div>
+        <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">Now onboarding Q2 2026 clinics</div>
+            <h1>Stop Losing Patients<br>to <span class="gradient-text">Missed Calls</span></h1>
+            <p>Your AI receptionist answers every call, books appointments, sends intake forms, and follows up on no-shows &mdash; 24/7, in your clinic's voice. Go live in 7 days.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book Your Free Demo &rarr;</a>
+                <a href="#how" class="btn-secondary">See How It Works</a>
+            </div>
+            <div class="hero-stat-row">
+                <div>
+                    <div class="hero-stat-num">35%</div>
+                    <div class="hero-stat-label">of clinic calls go unanswered</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">$1,200+</div>
+                    <div class="hero-stat-label">average revenue per missed new patient</div>
+                </div>
+                <div>
+                    <div class="hero-stat-num">7 days</div>
+                    <div class="hero-stat-label">from demo to live AI system</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain section" id="pain">
+    <div class="container">
+        <div class="reveal">
+            <div class="section-label">The Problem</div>
+            <div class="section-title">Your Front Desk Can't Keep Up</div>
+            <div class="section-subtitle">Every missed call is a patient who books with your competitor instead. Here's what's costing you money right now.</div>
+        </div>
+        <div class="pain-grid">
+            <div class="pain-card reveal">
+                <div class="pain-icon">&#128222;</div>
+                <h3>Missed Calls = Lost Revenue</h3>
+                <p>When your front desk is busy, on hold, or closed, new patients hang up and call the next clinic on Google.</p>
+                <div class="pain-stat">&#9888; Average clinic misses 7+ new patient calls/week</div>
+            </div>
+            <div class="pain-card reveal">
+                <div class="pain-icon">&#128203;</div>
+                <h3>Manual Intake is a Bottleneck</h3>
+                <p>Paper forms and manual data entry slow down patient flow, frustrate new patients, and eat your staff's time.</p>
+                <div class="pain-stat">&#9888; 20+ min wasted per new patient intake</div>
+            </div>
+            <div class="pain-card reveal">
+                <div class="pain-icon">&#128683;</div>
+                <h3>No-Shows Drain Your Schedule</h3>
+                <p>Without automated reminders and confirmations, 15-20% of appointments are no-shows. Empty chairs cost money.</p>
+                <div class="pain-stat">&#9888; $150-400 lost per no-show appointment</div>
+            </div>
+            <div class="pain-card reveal">
+                <div class="pain-icon">&#9201;</div>
+                <h3>Slow Response Kills Conversions</h3>
+                <p>Patients who submit online forms wait hours or days for a callback. By then, they've already booked elsewhere.</p>
+                <div class="pain-stat">&#9888; 78% of patients book with the first responder</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="section-label">How It Works</div>
+            <div class="section-title">Live in 7 Days. Not 7 Months.</div>
+            <div class="section-subtitle" style="margin:0 auto;">We handle every step. You focus on patients.</div>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card reveal">
+                <div class="step-number">1</div>
+                <h3>Book Your Demo</h3>
+                <p>See a live AI receptionist handle calls, book appointments, and send follow-ups tailored to your clinic. 20 minutes, no obligation.</p>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-number">2</div>
+                <h3>We Build Your AI</h3>
+                <p>We train your AI on your services, pricing, insurance policies, and brand voice. Integrates with your scheduling software.</p>
+                <div class="step-connector"></div>
+            </div>
+            <div class="step-card reveal">
+                <div class="step-number">3</div>
+                <h3>Go Live & Grow</h3>
+                <p>Your AI answers calls, books patients, and follows up on no-shows from day one. We optimize performance monthly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DEMO CTA -->
+<section class="demo section" id="demo">
+    <div class="container">
+        <div class="demo-box reveal">
+            <h2>See Your AI Receptionist <span class="gradient-text">Live</span></h2>
+            <p>Watch it answer a real call, book an appointment, and send a confirmation &mdash; all personalized to your clinic.</p>
+            <div class="demo-features">
+                <div class="demo-feature"><span class="check">&#10003;</span> Free, no obligation</div>
+                <div class="demo-feature"><span class="check">&#10003;</span> 20-minute live walkthrough</div>
+                <div class="demo-feature"><span class="check">&#10003;</span> Custom to your clinic</div>
+                <div class="demo-feature"><span class="check">&#10003;</span> See ROI projections</div>
+            </div>
+            <a href="#contact" class="btn-primary">Book Your Free Demo &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="section-label">Simple Pricing</div>
+            <div class="section-title">Transparent. No Hidden Fees.</div>
+            <div class="section-subtitle" style="margin:0 auto;">Pays for itself within the first month. One missed new patient costs more than a month of service.</div>
+        </div>
+        <div class="pricing-grid">
+            <div class="price-card reveal">
+                <div class="price-tier">Starter</div>
+                <div class="price-amount">$1,500 <span>setup</span></div>
+                <div class="price-desc">+ $500/mo &mdash; Perfect for single-location clinics getting started with AI.</div>
+                <ul class="price-features">
+                    <li><span class="check">&#10003;</span> AI phone answering (business hours)</li>
+                    <li><span class="check">&#10003;</span> Appointment scheduling</li>
+                    <li><span class="check">&#10003;</span> Automated appointment reminders</li>
+                    <li><span class="check">&#10003;</span> Basic intake form automation</li>
+                    <li><span class="check">&#10003;</span> Monthly performance report</li>
+                </ul>
+                <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+            </div>
+            <div class="price-card featured reveal">
+                <div class="price-tier">Professional</div>
+                <div class="price-amount">$2,500 <span>setup</span></div>
+                <div class="price-desc">+ $750/mo &mdash; Full AI automation for clinics serious about growth.</div>
+                <ul class="price-features">
+                    <li><span class="check">&#10003;</span> 24/7 AI phone & text answering</li>
+                    <li><span class="check">&#10003;</span> Smart scheduling with waitlist</li>
+                    <li><span class="check">&#10003;</span> No-show follow-up sequences</li>
+                    <li><span class="check">&#10003;</span> Full intake form automation</li>
+                    <li><span class="check">&#10003;</span> Insurance verification assist</li>
+                    <li><span class="check">&#10003;</span> Weekly optimization calls</li>
+                    <li><span class="check">&#10003;</span> Scheduling software integration</li>
+                </ul>
+                <a href="#contact" class="btn-primary" style="width:100%;justify-content:center;">Book Demo &rarr;</a>
+            </div>
+            <div class="price-card reveal">
+                <div class="price-tier">Enterprise</div>
+                <div class="price-amount">Custom</div>
+                <div class="price-desc">Multi-location clinics or DSOs needing custom AI workflows at scale.</div>
+                <ul class="price-features">
+                    <li><span class="check">&#10003;</span> Everything in Professional</li>
+                    <li><span class="check">&#10003;</span> Multi-location management</li>
+                    <li><span class="check">&#10003;</span> Custom API integrations</li>
+                    <li><span class="check">&#10003;</span> Dedicated account manager</li>
+                    <li><span class="check">&#10003;</span> Priority support SLA</li>
+                    <li><span class="check">&#10003;</span> HIPAA compliance review</li>
+                </ul>
+                <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section" id="testimonials">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="section-label">Results</div>
+            <div class="section-title">Clinics That Made the Switch</div>
+            <div class="section-subtitle" style="margin:0 auto;">Real results from practices that stopped leaving money on the table.</div>
+        </div>
+        <div class="test-grid">
+            <div class="test-card reveal">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="test-quote">"We were missing 30+ calls a week and didn't even know it. Within the first month, our AI booked 47 new patients we would have lost. The ROI isn't even close."</p>
+                <div class="test-author">
+                    <div class="test-avatar">DR</div>
+                    <div>
+                        <div class="test-name">Dr. Rachel Torres</div>
+                        <div class="test-role">Owner, Bright Smile Dental &mdash; Austin, TX</div>
+                    </div>
+                </div>
+            </div>
+            <div class="test-card reveal">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="test-quote">"My front desk was drowning. Now the AI handles all the scheduling and reminders, and my team can actually focus on patient care. No-shows dropped 60% in two months."</p>
+                <div class="test-author">
+                    <div class="test-avatar">MK</div>
+                    <div>
+                        <div class="test-name">Dr. Michael Kim</div>
+                        <div class="test-role">Peak Performance Chiropractic &mdash; Denver, CO</div>
+                    </div>
+                </div>
+            </div>
+            <div class="test-card reveal">
+                <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="test-quote">"I was skeptical about AI answering our phones, but patients can't tell the difference. It sounds natural, knows our services, and books correctly every time. Game changer."</p>
+                <div class="test-author">
+                    <div class="test-avatar">SJ</div>
+                    <div>
+                        <div class="test-name">Sarah Jensen</div>
+                        <div class="test-role">Office Manager, Lakewood Family Dental &mdash; Portland, OR</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="section-label">Get Started</div>
+            <div class="section-title">Book Your Free Demo</div>
+            <div class="section-subtitle" style="margin:0 auto;">20 minutes. We'll show you exactly how your AI receptionist would work for your clinic.</div>
+        </div>
+        <div class="form-grid">
+            <div class="form-info reveal">
+                <h3>What happens next?</h3>
+                <p>After you submit, a member of our team will reach out within 2 hours to schedule your personalized demo.</p>
+                <div class="form-info-item">
+                    <span class="form-info-icon">&#128197;</span>
+                    <span>20-minute personalized demo call</span>
+                </div>
+                <div class="form-info-item">
+                    <span class="form-info-icon">&#128200;</span>
+                    <span>Custom ROI projection for your clinic</span>
+                </div>
+                <div class="form-info-item">
+                    <span class="form-info-icon">&#9889;</span>
+                    <span>Go live within 7 days of signing</span>
+                </div>
+                <div class="form-info-item">
+                    <span class="form-info-icon">&#128274;</span>
+                    <span>HIPAA-aware AI &mdash; patient data stays safe</span>
+                </div>
+                <div class="form-info-item">
+                    <span class="form-info-icon">&#128176;</span>
+                    <span>30-day money-back guarantee</span>
+                </div>
+            </div>
+            <div class="form-card reveal">
+                <h3>Request Your Demo</h3>
+                <form action="https://formspree.io/f/yourformid" method="POST" id="demoForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Dr. Jane Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="jane@yourclinic.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clinic">Clinic Name</label>
+                        <input type="text" id="clinic" name="clinic" placeholder="Bright Smile Dental" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Clinic Type</label>
+                        <select id="type" name="clinic_type" required>
+                            <option value="" disabled selected>Select your practice type</option>
+                            <option value="dental">Dental Practice</option>
+                            <option value="chiropractic">Chiropractic Clinic</option>
+                            <option value="orthodontics">Orthodontics</option>
+                            <option value="physical-therapy">Physical Therapy</option>
+                            <option value="med-spa">Med Spa / Aesthetics</option>
+                            <option value="other">Other Healthcare</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Book My Free Demo &rarr;</button>
+                    <div class="form-disclaimer">No spam. No obligation. We respond within 2 hours during business hours.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="logo">EliteAI<span> Solutions</span></div>
+                <p>AI automation for healthcare clinics.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#pain">Problems</a>
+                <a href="#how">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact">Contact</a>
+                <a href="mailto:hello@eliteaisolutions.com">hello@eliteaisolutions.com</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 EliteAI Solutions. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Intersection Observer for scroll-reveal animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Stagger animations within a group
+                const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+                const idx = Array.from(siblings).indexOf(entry.target);
+                entry.target.style.transitionDelay = `${idx * 0.1}s`;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Close mobile nav on link click
+    document.querySelectorAll('#navLinks a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+
+    // Form submission (prevents default, shows confirmation)
+    document.getElementById('demoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+
+        // Simulate submission (replace with real endpoint)
+        setTimeout(() => {
+            btn.textContent = '✓ Demo Requested!';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+                this.reset();
+            }, 3000);
+        }, 800);
+    });
+</script>
+</body>
+</html>
