@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EliteAI Solutions — AI Automation for Dental & Chiropractic Clinics</title>
-    <meta name="description" content="Stop losing patients to missed calls. EliteAI builds custom AI receptionists that handle intake, scheduling, and follow-ups 24/7. Go live in 7 days.">
+    <title>EliteAI Solutions — AI Receptionist for Any Business</title>
+    <meta name="description" content="Stop losing customers to missed calls. EliteAI builds custom AI receptionists that handle calls, scheduling, routing, and follow-ups 24/7. Go live in 7 days.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,7 +42,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ── NAV ─────────────────────────────────────── */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             backdrop-filter: blur(20px) saturate(1.4);
@@ -81,7 +80,6 @@
             margin: 5px 0; border-radius: 2px; transition: 0.3s;
         }
 
-        /* ── SHARED ──────────────────────────────────── */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         .section { padding: 120px 0; }
         .section-label {
@@ -115,7 +113,6 @@
         }
         .btn-secondary:hover { border-color: var(--border-hover); background: rgba(255,255,255,0.03); }
 
-        /* ── HERO ────────────────────────────────────── */
         .hero {
             min-height: 100vh; display: flex; align-items: center;
             position: relative; overflow: hidden;
@@ -171,182 +168,6 @@
         }
         .hero-stat-label { font-size: 0.825rem; color: var(--text-muted); margin-top: 4px; }
 
-        /* ── PAIN POINTS ─────────────────────────────── */
-        .pain { background: var(--bg-secondary); }
-        .pain-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px; margin-top: 56px;
-        }
-        .pain-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 36px 28px;
-            transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
-            position: relative; overflow: hidden;
-        }
-        .pain-card:hover {
-            transform: translateY(-4px); border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
-        .pain-icon {
-            width: 52px; height: 52px; border-radius: 14px;
-            background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem; margin-bottom: 20px;
-        }
-        .pain-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em; }
-        .pain-card p { color: var(--text-secondary); font-size: 0.925rem; line-height: 1.65; }
-        .pain-stat {
-            margin-top: 16px; font-size: 0.8rem; font-weight: 600; color: #ef4444;
-            display: flex; align-items: center; gap: 6px;
-        }
-
-        /* ── HOW IT WORKS ────────────────────────────── */
-        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
-        .step-card { text-align: center; padding: 40px 28px; position: relative; }
-        .step-number {
-            width: 56px; height: 56px; border-radius: 50%;
-            background: var(--gradient); display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 1.25rem; margin: 0 auto 24px;
-            box-shadow: 0 4px 24px rgba(99,102,241,0.25);
-        }
-        .step-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
-        .step-card p { color: var(--text-secondary); font-size: 0.925rem; line-height: 1.65; }
-        .step-connector {
-            position: absolute; top: 68px; right: -16px;
-            width: 32px; height: 2px; background: var(--border);
-        }
-        .step-card:last-child .step-connector { display: none; }
-
-        /* ── DEMO ────────────────────────────────────── */
-        .demo { background: var(--bg-secondary); }
-        .demo-box {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 24px; padding: 64px; text-align: center;
-            position: relative; overflow: hidden;
-        }
-        .demo-box::before {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 60%; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-1), transparent);
-        }
-        .demo-box h2 {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 800;
-            letter-spacing: -0.03em; margin-bottom: 16px;
-        }
-        .demo-box p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .demo-features {
-            display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;
-        }
-        .demo-feature {
-            display: flex; align-items: center; gap: 8px;
-            color: var(--text-secondary); font-size: 0.9rem; font-weight: 500;
-        }
-        .demo-feature .check { color: #22c55e; font-weight: 700; }
-
-        /* ── PRICING ─────────────────────────────────── */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
-        .price-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 44px 36px;
-            position: relative; transition: transform 0.25s, border-color 0.25s;
-        }
-        .price-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
-        .price-card.featured {
-            border-color: rgba(99,102,241,0.3);
-            box-shadow: var(--shadow-glow);
-        }
-        .price-card.featured::before {
-            content: 'Most Popular'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
-            background: var(--gradient); padding: 6px 20px; border-radius: 0 0 10px 10px;
-            font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em;
-        }
-        .price-tier { font-size: 0.85rem; font-weight: 600; color: var(--accent-3); margin-bottom: 8px; }
-        .price-amount { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; }
-        .price-amount span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
-        .price-desc { color: var(--text-secondary); font-size: 0.9rem; margin: 12px 0 28px; }
-        .price-features { list-style: none; margin-bottom: 32px; }
-        .price-features li {
-            padding: 10px 0; font-size: 0.9rem; color: var(--text-secondary);
-            display: flex; align-items: center; gap: 10px;
-            border-bottom: 1px solid var(--border);
-        }
-        .price-features li:last-child { border-bottom: none; }
-        .price-features .check { color: #22c55e; font-weight: 700; flex-shrink: 0; }
-
-        /* ── TESTIMONIALS ────────────────────────────── */
-        .testimonials { background: var(--bg-secondary); }
-        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 56px; }
-        .test-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 36px 28px;
-        }
-        .test-stars { color: #facc15; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
-        .test-quote { font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px; font-style: italic; }
-        .test-author { display: flex; align-items: center; gap: 14px; }
-        .test-avatar {
-            width: 44px; height: 44px; border-radius: 50%;
-            background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 1rem; color: var(--accent-3);
-        }
-        .test-name { font-weight: 600; font-size: 0.925rem; }
-        .test-role { font-size: 0.8rem; color: var(--text-muted); }
-
-        /* ── FORM ────────────────────────────────────── */
-        #contact { scroll-margin-top: 80px; }
-        .form-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px;
-            align-items: start;
-        }
-        .form-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
-        .form-info p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
-        .form-info-item {
-            display: flex; align-items: center; gap: 12px;
-            padding: 14px 0; border-bottom: 1px solid var(--border);
-            font-size: 0.925rem; color: var(--text-secondary);
-        }
-        .form-info-icon { font-size: 1.25rem; }
-        .form-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 40px;
-        }
-        .form-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 24px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label {
-            display: block; font-size: 0.825rem; font-weight: 600;
-            color: var(--text-secondary); margin-bottom: 8px;
-        }
-        .form-group input, .form-group select {
-            width: 100%; padding: 14px 16px; border-radius: var(--radius-sm);
-            border: 1px solid var(--border); background: var(--bg-primary);
-            color: var(--text-primary); font-family: inherit; font-size: 0.925rem;
-            transition: border-color 0.2s;
-            appearance: none; -webkit-appearance: none;
-        }
-        .form-group input:focus, .form-group select:focus {
-            outline: none; border-color: var(--accent-1);
-            box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
-        }
-        .form-group input::placeholder { color: var(--text-muted); }
-        .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236b6b80' viewBox='0 0 16 16'%3E%3Cpath d='M1.5 5.5l6.5 6.5 6.5-6.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
-        .form-group select option { background: var(--bg-card); }
-        .form-submit { width: 100%; margin-top: 8px; }
-        .form-disclaimer { font-size: 0.75rem; color: var(--text-muted); margin-top: 14px; text-align: center; }
-
-        /* ── FOOTER ───────────────────────────────────── */
-        footer {
-            border-top: 1px solid var(--border); padding: 48px 0 32px;
-            background: var(--bg-primary);
-        }
-        .footer-inner {
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;
-        }
-        .footer-brand p { color: var(--text-muted); font-size: 0.825rem; margin-top: 6px; }
-        .footer-links { display: flex; gap: 28px; }
-        .footer-links a { color: var(--text-muted); font-size: 0.825rem; text-decoration: none; transition: color 0.2s; }
-        .footer-links a:hover { color: var(--text-secondary); }
-        .footer-copy { width: 100%; text-align: center; padding-top: 32px; border-top: 1px solid var(--border); margin-top: 24px; }
-        .footer-copy p { font-size: 0.75rem; color: var(--text-muted); }
-
-        /* ── ANIMATIONS ──────────────────────────────── */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(24px); }
             to { opacity: 1; transform: translateY(0); }
@@ -357,14 +178,78 @@
         }
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── RESPONSIVE ──────────────────────────────── */
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 56px; }
+        .pain-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
+        .pain-card:hover { transform: translateY(-4px); border-color: var(--border-hover); box-shadow: var(--shadow-glow); }
+        .pain-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+        .pain-stat { margin-top: 16px; font-size: 0.8rem; font-weight: 600; color: #ef4444; display: flex; align-items: center; gap: 6px; }
+
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+        .step-card { text-align: center; padding: 40px 28px; position: relative; }
+        .step-number { width: 56px; height: 56px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.25rem; margin: 0 auto 24px; box-shadow: 0 4px 24px rgba(99,102,241,0.25); }
+        .step-connector { position: absolute; top: 68px; right: -16px; width: 32px; height: 2px; background: var(--border); }
+        .step-card:last-child .step-connector { display: none; }
+
+        .demo-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 24px; padding: 64px; text-align: center; position: relative; overflow: hidden; }
+        .demo-features { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+        .demo-feature { display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; }
+        .demo-feature .check { color: #22c55e; font-weight: 700; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 56px; }
+        .feature-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px; transition: transform 0.25s, border-color 0.25s; }
+        .feature-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
+        .feature-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-top: 56px; }
+        .price-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 44px 36px; position: relative; transition: transform 0.25s, border-color 0.25s; }
+        .price-card:hover { transform: translateY(-4px); border-color: var(--border-hover); }
+        .price-card.featured { border-color: rgba(99,102,241,0.3); box-shadow: var(--shadow-glow); }
+        .price-tier { font-size: 0.85rem; font-weight: 600; color: var(--accent-3); margin-bottom: 8px; }
+        .price-amount { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; }
+        .price-amount span { font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+        .price-desc { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
+        .price-features { list-style: none; margin-bottom: 32px; }
+        .price-features li { padding: 10px 0; font-size: 0.9rem; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+        .price-features li:last-child { border-bottom: none; }
+        .price-features .check { color: #22c55e; font-weight: 700; flex-shrink: 0; }
+        .price-compare { margin-top: 12px; font-size: 0.8rem; color: var(--text-muted); font-style: italic; }
+
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 56px; }
+        .test-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px 28px; }
+        .test-stars { color: #facc15; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
+        .test-quote { font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px; font-style: italic; }
+        .test-author { display: flex; align-items: center; gap: 14px; }
+        .test-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-subtle); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; color: var(--accent-3); }
+        .test-name { font-weight: 600; font-size: 0.925rem; }
+        .test-role { font-size: 0.8rem; color: var(--text-muted); }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; align-items: start; }
+        .form-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 40px; }
+        .form-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; }
+        .form-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.02em; }
+        .form-info p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7; }
+        .form-info-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; color: var(--text-secondary); font-size: 0.95rem; }
+        .form-info-icon { font-size: 1.2rem; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--text-secondary); }
+        .form-group input, .form-group select { width: 100%; padding: 14px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--bg-primary); color: var(--text-primary); font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s, box-shadow 0.2s; }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--accent-1); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+        .form-submit { width: 100%; justify-content: center; margin-top: 8px; }
+        .form-disclaimer { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 12px; }
+
+        footer { border-top: 1px solid var(--border); padding: 48px 0 32px; background: var(--bg-primary); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+        .footer-brand p { color: var(--text-muted); font-size: 0.9rem; margin-top: 8px; }
+        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); }
+        .footer-copy p { color: var(--text-muted); font-size: 0.8rem; }
+
         @media (max-width: 900px) {
-            .steps-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
-            .step-connector { display: none !important; }
-            .form-grid { grid-template-columns: 1fr; }
             .hero-stat-row { gap: 32px; }
-            .demo-box { padding: 40px 24px; }
-            .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .step-connector { display: none; }
         }
         @media (max-width: 640px) {
             .nav-links { display: none; }
@@ -380,10 +265,7 @@
             .hero-buttons { flex-direction: column; }
             .hero-buttons .btn-primary, .hero-buttons .btn-secondary { width: 100%; justify-content: center; }
             .hero-stat-row { flex-direction: column; gap: 20px; }
-            .section { padding: 80px 0; }
-            .pain-grid { grid-template-columns: 1fr; }
-            .test-grid { grid-template-columns: 1fr; }
-            .form-card { padding: 28px 20px; }
+            .form-grid { grid-template-columns: 1fr; }
             .demo-features { flex-direction: column; align-items: center; gap: 12px; }
         }
     </style>
@@ -396,9 +278,9 @@
         <div class="logo">EliteAI<span> Solutions</span></div>
         <div class="nav-links" id="navLinks">
             <a href="#pain">Problems</a>
+            <a href="#features">Features</a>
             <a href="#how">How It Works</a>
             <a href="#pricing">Pricing</a>
-            <a href="#testimonials">Results</a>
             <a href="#contact" class="nav-cta">Book Free Demo</a>
         </div>
         <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
@@ -411,9 +293,9 @@
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <div class="hero-badge">Now onboarding Q2 2026 clinics</div>
-            <h1>Stop Losing Patients<br>to <span class="gradient-text">Missed Calls</span></h1>
-            <p>Your AI receptionist answers every call, books appointments, sends intake forms, and follows up on no-shows &mdash; 24/7, in your clinic's voice. Go live in 7 days.</p>
+            <div class="hero-badge">AI Receptionist for Any Business</div>
+            <h1>Stop Losing Customers<br>to <span class="gradient-text">Missed Calls</span></h1>
+            <p>Your AI receptionist answers every call, routes to the right person, books appointments, and follows up automatically &mdash; 24/7, in your business's voice. Go live in 7 days.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Book Your Free Demo &rarr;</a>
                 <a href="#how" class="btn-secondary">See How It Works</a>
@@ -421,11 +303,11 @@
             <div class="hero-stat-row">
                 <div>
                     <div class="hero-stat-num">35%</div>
-                    <div class="hero-stat-label">of clinic calls go unanswered</div>
+                    <div class="hero-stat-label">of business calls go unanswered</div>
                 </div>
                 <div>
                     <div class="hero-stat-num">$1,200+</div>
-                    <div class="hero-stat-label">average revenue per missed new patient</div>
+                    <div class="hero-stat-label">average revenue per missed customer</div>
                 </div>
                 <div>
                     <div class="hero-stat-num">7 days</div>
@@ -442,32 +324,75 @@
         <div class="reveal">
             <div class="section-label">The Problem</div>
             <div class="section-title">Your Front Desk Can't Keep Up</div>
-            <div class="section-subtitle">Every missed call is a patient who books with your competitor instead. Here's what's costing you money right now.</div>
+            <div class="section-subtitle">Every missed call is a customer who goes to your competitor instead. Here's what's costing you money right now.</div>
         </div>
         <div class="pain-grid">
             <div class="pain-card reveal">
                 <div class="pain-icon">&#128222;</div>
                 <h3>Missed Calls = Lost Revenue</h3>
-                <p>When your front desk is busy, on hold, or closed, new patients hang up and call the next clinic on Google.</p>
-                <div class="pain-stat">&#9888; Average clinic misses 7+ new patient calls/week</div>
+                <p>When your receptionist is busy, on hold, or the office is closed, new customers hang up and call the next business on Google.</p>
+                <div class="pain-stat">&#9888; Average SMB misses 7+ customer calls/week</div>
             </div>
             <div class="pain-card reveal">
-                <div class="pain-icon">&#128203;</div>
-                <h3>Manual Intake is a Bottleneck</h3>
-                <p>Paper forms and manual data entry slow down patient flow, frustrate new patients, and eat your staff's time.</p>
-                <div class="pain-stat">&#9888; 20+ min wasted per new patient intake</div>
+                <div class="pain-icon">&#128260;</div>
+                <h3>Poor Call Routing Wastes Time</h3>
+                <p>Callers get bounced between departments, put on hold, or transferred to voicemail. Each bad experience drives customers away.</p>
+                <div class="pain-stat">&#9888; 67% of callers hang up when they can't reach a human</div>
             </div>
             <div class="pain-card reveal">
                 <div class="pain-icon">&#128683;</div>
                 <h3>No-Shows Drain Your Schedule</h3>
-                <p>Without automated reminders and confirmations, 15-20% of appointments are no-shows. Empty chairs cost money.</p>
+                <p>Without automated reminders and confirmations, 15-20% of appointments are no-shows. Empty slots cost money.</p>
                 <div class="pain-stat">&#9888; $150-400 lost per no-show appointment</div>
             </div>
             <div class="pain-card reveal">
                 <div class="pain-icon">&#9201;</div>
                 <h3>Slow Response Kills Conversions</h3>
-                <p>Patients who submit online forms wait hours or days for a callback. By then, they've already booked elsewhere.</p>
-                <div class="pain-stat">&#9888; 78% of patients book with the first responder</div>
+                <p>Customers who submit online forms wait hours or days for a callback. By then, they've already booked elsewhere.</p>
+                <div class="pain-stat">&#9888; 78% of customers book with the first responder</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES (merged ReceptionistAI) -->
+<section class="section" id="features" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <div class="section-label">AI Receptionist Features</div>
+            <div class="section-title">Everything a Human Receptionist Does. But 24/7.</div>
+            <div class="section-subtitle" style="margin:0 auto;">AI phone answering, smart call routing, appointment scheduling, and automated follow-ups &mdash; all in one platform.</div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon">&#128222;</div>
+                <h3>AI Phone Answering</h3>
+                <p>Your AI answers every inbound call instantly, 24/7/365. It sounds natural, knows your services, and handles inquiries in your business's voice.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">&#128260;</div>
+                <h3>Smart Call Routing</h3>
+                <p>AI understands caller intent and routes to the right department or team member. No more "press 1 for sales" menus &mdash; just natural conversation.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">&#128197;</div>
+                <h3>Appointment Scheduling</h3>
+                <p>Callers book appointments directly during the call. Syncs with your calendar, checks availability, and sends instant confirmations via text or email.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">&#128172;</div>
+                <h3>AI Text & Chat Answering</h3>
+                <p>Handles SMS and web chat inquiries with the same intelligence as phone calls. Responds instantly to appointment requests, FAQs, and more.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">&#128276;</div>
+                <h3>Automated Reminders & Follow-ups</h3>
+                <p>AI sends appointment reminders, no-show follow-ups, and re-engagement messages automatically. Reduce no-shows by up to 60%.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">&#128203;</div>
+                <h3>Intake & Qualification</h3>
+                <p>Collects customer information, qualifies leads, and fills intake forms during the call. Data flows directly into your CRM or scheduling software.</p>
             </div>
         </div>
     </div>
@@ -479,25 +404,25 @@
         <div class="reveal" style="text-align:center;">
             <div class="section-label">How It Works</div>
             <div class="section-title">Live in 7 Days. Not 7 Months.</div>
-            <div class="section-subtitle" style="margin:0 auto;">We handle every step. You focus on patients.</div>
+            <div class="section-subtitle" style="margin:0 auto;">We handle every step. You focus on your customers.</div>
         </div>
         <div class="steps-grid">
             <div class="step-card reveal">
                 <div class="step-number">1</div>
                 <h3>Book Your Demo</h3>
-                <p>See a live AI receptionist handle calls, book appointments, and send follow-ups tailored to your clinic. 20 minutes, no obligation.</p>
+                <p>See a live AI receptionist handle calls, book appointments, route inquiries, and send follow-ups tailored to your business. 20 minutes, no obligation.</p>
                 <div class="step-connector"></div>
             </div>
             <div class="step-card reveal">
                 <div class="step-number">2</div>
                 <h3>We Build Your AI</h3>
-                <p>We train your AI on your services, pricing, insurance policies, and brand voice. Integrates with your scheduling software.</p>
+                <p>We train your AI on your services, pricing, team structure, and brand voice. Integrates with your scheduling and CRM software.</p>
                 <div class="step-connector"></div>
             </div>
             <div class="step-card reveal">
                 <div class="step-number">3</div>
                 <h3>Go Live & Grow</h3>
-                <p>Your AI answers calls, books patients, and follows up on no-shows from day one. We optimize performance monthly.</p>
+                <p>Your AI answers calls, routes inquiries, books appointments, and follows up from day one. We optimize performance monthly.</p>
             </div>
         </div>
     </div>
@@ -508,11 +433,11 @@
     <div class="container">
         <div class="demo-box reveal">
             <h2>See Your AI Receptionist <span class="gradient-text">Live</span></h2>
-            <p>Watch it answer a real call, book an appointment, and send a confirmation &mdash; all personalized to your clinic.</p>
+            <p>Watch it answer a real call, route to the right person, book an appointment, and send a confirmation &mdash; all personalized to your business.</p>
             <div class="demo-features">
                 <div class="demo-feature"><span class="check">&#10003;</span> Free, no obligation</div>
                 <div class="demo-feature"><span class="check">&#10003;</span> 20-minute live walkthrough</div>
-                <div class="demo-feature"><span class="check">&#10003;</span> Custom to your clinic</div>
+                <div class="demo-feature"><span class="check">&#10003;</span> Custom to your business</div>
                 <div class="demo-feature"><span class="check">&#10003;</span> See ROI projections</div>
             </div>
             <a href="#contact" class="btn-primary">Book Your Free Demo &rarr;</a>
@@ -526,48 +451,53 @@
         <div class="reveal" style="text-align:center;">
             <div class="section-label">Simple Pricing</div>
             <div class="section-title">Transparent. No Hidden Fees.</div>
-            <div class="section-subtitle" style="margin:0 auto;">Pays for itself within the first month. One missed new patient costs more than a month of service.</div>
+            <div class="section-subtitle" style="margin:0 auto;">Pays for itself within the first month. One missed customer costs more than a month of service.</div>
         </div>
         <div class="pricing-grid">
             <div class="price-card reveal">
                 <div class="price-tier">Starter</div>
-                <div class="price-amount">$1,500 <span>setup</span></div>
-                <div class="price-desc">+ $500/mo &mdash; Perfect for single-location clinics getting started with AI.</div>
+                <div class="price-amount">$79<span>/mo</span></div>
+                <div class="price-desc">Perfect for small businesses getting started with AI reception.</div>
                 <ul class="price-features">
                     <li><span class="check">&#10003;</span> AI phone answering (business hours)</li>
+                    <li><span class="check">&#10003;</span> Basic call routing (up to 3 departments)</li>
                     <li><span class="check">&#10003;</span> Appointment scheduling</li>
                     <li><span class="check">&#10003;</span> Automated appointment reminders</li>
-                    <li><span class="check">&#10003;</span> Basic intake form automation</li>
                     <li><span class="check">&#10003;</span> Monthly performance report</li>
+                    <li><span class="check">&#10003;</span> Up to 100 calls/month</li>
                 </ul>
                 <a href="https://web-production-f6c06.up.railway.app/checkout/starter" class="btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+                <div class="price-compare">Smith.ai charges $95/mo for AI-only. Ruby starts at $235/mo.</div>
             </div>
             <div class="price-card featured reveal">
                 <div class="price-tier">Professional</div>
-                <div class="price-amount">$2,500 <span>setup</span></div>
-                <div class="price-desc">+ $750/mo &mdash; Full AI automation for clinics serious about growth.</div>
+                <div class="price-amount">$199<span>/mo</span></div>
+                <div class="price-desc">Full AI receptionist for businesses serious about growth.</div>
                 <ul class="price-features">
-                    <li><span class="check">&#10003;</span> 24/7 AI phone & text answering</li>
+                    <li><span class="check">&#10003;</span> 24/7 AI phone, text & chat answering</li>
+                    <li><span class="check">&#10003;</span> Smart call routing (unlimited departments)</li>
                     <li><span class="check">&#10003;</span> Smart scheduling with waitlist</li>
                     <li><span class="check">&#10003;</span> No-show follow-up sequences</li>
-                    <li><span class="check">&#10003;</span> Full intake form automation</li>
-                    <li><span class="check">&#10003;</span> Insurance verification assist</li>
+                    <li><span class="check">&#10003;</span> Lead qualification & intake forms</li>
+                    <li><span class="check">&#10003;</span> CRM & calendar integrations</li>
                     <li><span class="check">&#10003;</span> Weekly optimization calls</li>
-                    <li><span class="check">&#10003;</span> Scheduling software integration</li>
+                    <li><span class="check">&#10003;</span> Up to 500 calls/month</li>
                 </ul>
                 <a href="https://web-production-f6c06.up.railway.app/checkout/pro" class="btn-primary" style="width:100%;justify-content:center;">Get Started &rarr;</a>
+                <div class="price-compare">Dialpad AI Contact Center starts at $95/user/mo. We cover your whole team.</div>
             </div>
             <div class="price-card reveal">
                 <div class="price-tier">Enterprise</div>
                 <div class="price-amount">Custom</div>
-                <div class="price-desc">Multi-location clinics or DSOs needing custom AI workflows at scale.</div>
+                <div class="price-desc">Multi-location businesses needing custom AI workflows at scale.</div>
                 <ul class="price-features">
                     <li><span class="check">&#10003;</span> Everything in Professional</li>
                     <li><span class="check">&#10003;</span> Multi-location management</li>
                     <li><span class="check">&#10003;</span> Custom API integrations</li>
                     <li><span class="check">&#10003;</span> Dedicated account manager</li>
                     <li><span class="check">&#10003;</span> Priority support SLA</li>
-                    <li><span class="check">&#10003;</span> HIPAA compliance review</li>
+                    <li><span class="check">&#10003;</span> Unlimited calls</li>
+                    <li><span class="check">&#10003;</span> Compliance review</li>
                 </ul>
                 <a href="#contact" class="btn-secondary" style="width:100%;justify-content:center;">Contact Us</a>
             </div>
@@ -580,40 +510,40 @@
     <div class="container">
         <div class="reveal" style="text-align:center;">
             <div class="section-label">Results</div>
-            <div class="section-title">Clinics That Made the Switch</div>
-            <div class="section-subtitle" style="margin:0 auto;">Real results from practices that stopped leaving money on the table.</div>
+            <div class="section-title">Businesses That Made the Switch</div>
+            <div class="section-subtitle" style="margin:0 auto;">Real results from businesses that stopped leaving money on the table.</div>
         </div>
         <div class="test-grid">
             <div class="test-card reveal">
                 <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p class="test-quote">"We were missing 30+ calls a week and didn't even know it. Within the first month, our AI booked 47 new patients we would have lost. The ROI isn't even close."</p>
+                <p class="test-quote">"We were missing 30+ calls a week and didn't even know it. Within the first month, our AI booked 47 new appointments we would have lost. The ROI isn't even close."</p>
                 <div class="test-author">
-                    <div class="test-avatar">DR</div>
+                    <div class="test-avatar">RT</div>
                     <div>
-                        <div class="test-name">Dr. Rachel Torres</div>
-                        <div class="test-role">Owner, Bright Smile Dental &mdash; Austin, TX</div>
+                        <div class="test-name">Rachel Torres</div>
+                        <div class="test-role">Owner, Bright Smile Wellness &mdash; Austin, TX</div>
                     </div>
                 </div>
             </div>
             <div class="test-card reveal">
                 <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p class="test-quote">"My front desk was drowning. Now the AI handles all the scheduling and reminders, and my team can actually focus on patient care. No-shows dropped 60% in two months."</p>
+                <p class="test-quote">"My front desk was drowning. Now the AI handles all the scheduling, call routing, and reminders, and my team can actually focus on serving customers. No-shows dropped 60%."</p>
                 <div class="test-author">
                     <div class="test-avatar">MK</div>
                     <div>
-                        <div class="test-name">Dr. Michael Kim</div>
-                        <div class="test-role">Peak Performance Chiropractic &mdash; Denver, CO</div>
+                        <div class="test-name">Michael Kim</div>
+                        <div class="test-role">Peak Performance Services &mdash; Denver, CO</div>
                     </div>
                 </div>
             </div>
             <div class="test-card reveal">
                 <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p class="test-quote">"I was skeptical about AI answering our phones, but patients can't tell the difference. It sounds natural, knows our services, and books correctly every time. Game changer."</p>
+                <p class="test-quote">"I was skeptical about AI answering our phones, but customers can't tell the difference. It sounds natural, routes calls perfectly, and books correctly every time."</p>
                 <div class="test-author">
                     <div class="test-avatar">SJ</div>
                     <div>
                         <div class="test-name">Sarah Jensen</div>
-                        <div class="test-role">Office Manager, Lakewood Family Dental &mdash; Portland, OR</div>
+                        <div class="test-role">Office Manager, Lakewood Professional Group &mdash; Portland, OR</div>
                     </div>
                 </div>
             </div>
@@ -627,7 +557,7 @@
         <div class="reveal" style="text-align:center;">
             <div class="section-label">Get Started</div>
             <div class="section-title">Book Your Free Demo</div>
-            <div class="section-subtitle" style="margin:0 auto;">20 minutes. We'll show you exactly how your AI receptionist would work for your clinic.</div>
+            <div class="section-subtitle" style="margin:0 auto;">20 minutes. We'll show you exactly how your AI receptionist would work for your business.</div>
         </div>
         <div class="form-grid">
             <div class="form-info reveal">
@@ -639,7 +569,7 @@
                 </div>
                 <div class="form-info-item">
                     <span class="form-info-icon">&#128200;</span>
-                    <span>Custom ROI projection for your clinic</span>
+                    <span>Custom ROI projection for your business</span>
                 </div>
                 <div class="form-info-item">
                     <span class="form-info-icon">&#9889;</span>
@@ -647,7 +577,7 @@
                 </div>
                 <div class="form-info-item">
                     <span class="form-info-icon">&#128274;</span>
-                    <span>HIPAA-aware AI &mdash; patient data stays safe</span>
+                    <span>Enterprise-grade security &mdash; your data stays safe</span>
                 </div>
                 <div class="form-info-item">
                     <span class="form-info-icon">&#128176;</span>
@@ -659,30 +589,33 @@
                 <form action="https://web-production-f6c06.up.railway.app/submit" method="POST" id="demoForm">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Dr. Jane Smith" required>
+                        <input type="text" id="name" name="name" placeholder="Jane Smith" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="jane@yourclinic.com" required>
+                        <input type="email" id="email" name="email" placeholder="jane@yourbusiness.com" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
                     </div>
                     <div class="form-group">
-                        <label for="clinic">Clinic Name</label>
-                        <input type="text" id="clinic" name="clinic" placeholder="Bright Smile Dental" required>
+                        <label for="company">Business Name</label>
+                        <input type="text" id="company" name="company" placeholder="Your Business Name" required>
                     </div>
                     <div class="form-group">
-                        <label for="type">Clinic Type</label>
-                        <select id="type" name="clinic_type" required>
-                            <option value="" disabled selected>Select your practice type</option>
-                            <option value="dental">Dental Practice</option>
-                            <option value="chiropractic">Chiropractic Clinic</option>
-                            <option value="orthodontics">Orthodontics</option>
-                            <option value="physical-therapy">Physical Therapy</option>
-                            <option value="med-spa">Med Spa / Aesthetics</option>
-                            <option value="other">Other Healthcare</option>
+                        <label for="type">Business Type</label>
+                        <select id="type" name="business_type" required>
+                            <option value="" disabled selected>Select your business type</option>
+                            <option value="professional-services">Professional Services</option>
+                            <option value="healthcare">Healthcare / Wellness</option>
+                            <option value="legal">Legal / Law Firm</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="home-services">Home Services</option>
+                            <option value="salon-spa">Salon / Spa</option>
+                            <option value="insurance">Insurance</option>
+                            <option value="accounting">Accounting / Finance</option>
+                            <option value="other">Other</option>
                         </select>
                     </div>
                     <button type="submit" class="btn-primary form-submit">Book My Free Demo &rarr;</button>
@@ -699,10 +632,11 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="logo">EliteAI<span> Solutions</span></div>
-                <p>AI automation for healthcare clinics.</p>
+                <p>AI receptionist automation for any business.</p>
             </div>
             <div class="footer-links">
                 <a href="#pain">Problems</a>
+                <a href="#features">Features</a>
                 <a href="#how">How It Works</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
@@ -716,11 +650,9 @@
 </footer>
 
 <script>
-    // Intersection Observer for scroll-reveal animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Stagger animations within a group
                 const siblings = entry.target.parentElement.querySelectorAll('.reveal');
                 const idx = Array.from(siblings).indexOf(entry.target);
                 entry.target.style.transitionDelay = `${idx * 0.1}s`;
@@ -732,14 +664,12 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Close mobile nav on link click
     document.querySelectorAll('#navLinks a').forEach(link => {
         link.addEventListener('click', () => {
             document.getElementById('navLinks').classList.remove('open');
         });
     });
 
-    // Form submission — posts to demo agent
     document.getElementById('demoForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = this.querySelector('button[type="submit"]');
@@ -749,13 +679,13 @@
 
         const formData = new FormData(this);
         const data = {
-            clinic_name: formData.get('clinic') || 'Demo Clinic',
-            clinic_type: 'dental',
+            clinic_name: formData.get('company') || 'Demo Business',
+            clinic_type: formData.get('business_type') || 'other',
             patient_name: formData.get('name') || 'Demo User',
             email: formData.get('email') || '',
-            phone: '',
-            inquiry_type: 'new_patient',
-            message: formData.get('message') || 'Interested in AI automation demo'
+            phone: formData.get('phone') || '',
+            inquiry_type: 'new_customer',
+            message: 'Interested in AI receptionist demo'
         };
 
         try {
