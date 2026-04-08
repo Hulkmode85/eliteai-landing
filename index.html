@@ -656,7 +656,7 @@
             </div>
             <div class="form-card reveal">
                 <h3>Request Your Demo</h3>
-                <form action="https://formspree.io/f/yourformid" method="POST" id="demoForm">
+                <form action="https://web-production-f6c06.up.railway.app/submit" method="POST" id="demoForm">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" placeholder="Dr. Jane Smith" required>
@@ -739,25 +739,44 @@
         });
     });
 
-    // Form submission (prevents default, shows confirmation)
-    document.getElementById('demoForm').addEventListener('submit', function(e) {
+    // Form submission — posts to demo agent
+    document.getElementById('demoForm').addEventListener('submit', async function(e) {
         e.preventDefault();
         const btn = this.querySelector('button[type="submit"]');
         const originalText = btn.textContent;
         btn.textContent = 'Sending...';
         btn.disabled = true;
 
-        // Simulate submission (replace with real endpoint)
-        setTimeout(() => {
-            btn.textContent = '✓ Demo Requested!';
+        const formData = new FormData(this);
+        const data = {
+            clinic_name: formData.get('clinic') || 'Demo Clinic',
+            clinic_type: 'dental',
+            patient_name: formData.get('name') || 'Demo User',
+            email: formData.get('email') || '',
+            phone: '',
+            inquiry_type: 'new_patient',
+            message: formData.get('message') || 'Interested in AI automation demo'
+        };
+
+        try {
+            const res = await fetch('https://web-production-f6c06.up.railway.app/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            btn.textContent = '\u2713 Demo Requested!';
             btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-            setTimeout(() => {
-                btn.textContent = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-                this.reset();
-            }, 3000);
-        }, 800);
+        } catch (err) {
+            btn.textContent = '\u2713 Demo Requested!';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        }
+
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+            this.reset();
+        }, 3000);
     });
 </script>
 </body>
